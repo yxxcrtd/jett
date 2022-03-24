@@ -24,16 +24,18 @@ public class TestController {
         User user1 = new User();
         user1.setId("1");
         user1.setName("张三");
+        user1.setAge(18);
         list.add(user1);
 
         User user2 = new User();
         user2.setId("2");
         user2.setName("李四");
+        user2.setAge(20);
         list.add(user2);
 
-        map.put("users", list);
+        map.put("list", list);
 
-        return new ModelAndView(new JettView("template.xls", "output"), map);
+        return new ModelAndView(new JettView("templates/test.xls", "output"), map);
 
     }
     

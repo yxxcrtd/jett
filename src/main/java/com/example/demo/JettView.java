@@ -32,13 +32,14 @@ public class JettView extends AbstractView {
     }
 
     @Override
-    protected void renderMergedOutputModel(Map<String, Object> model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    protected void renderMergedOutputModel(Map<String, Object> map, HttpServletRequest request, HttpServletResponse response) throws Exception {
         try (InputStream is = getClass().getClassLoader().getResourceAsStream(templatePath)) {
             response.setContentType(getContentType());
-            response.setHeader("content-disposition", "attachment;filename=" + exportFileName + ".xls");
+            response.setHeader("content-disposition", "attachment;filename=" + exportFileName + ".xlsx");
             ServletOutputStream os = response.getOutputStream();
-            Workbook workbook = new ExcelTransformer().transform(is, model);
+            Workbook workbook = new ExcelTransformer().transform(is, map);
             workbook.write(os);
+            os.close();
         }
     }
     

@@ -101,10 +101,6 @@ fabric.properties
 hs_err_pid*
 target
 
-jupiter_client/src/main/java/com/joyintech/jupiter/client/BondDto.java
-jupiter_client/src/main/java/com/joyintech/jupiter/client/Test.java
-
-
 # For vscode
 .classpath
 .project
