@@ -29,6 +29,7 @@ public class JettView extends AbstractView {
         }
         this.exportFileName = exportFileName;
         setContentType("application/vnd.ms-excel");
+        // setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
     }
 
     @Override
